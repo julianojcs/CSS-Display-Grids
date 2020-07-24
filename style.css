@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.box1, .box4, .box7, .box10 {
+    background-color: lightcoral;
+}
+.box2, .box5, .box8, .box11 {
+    background-color: lightblue;
+}
+.box3, .box6, .box9, .box12 {
+    background-color: lightgreen;
+}
+
+.container1 { 
+    height: 30vh;
+    width: 20vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 5px;
+}
+
+.container2 { 
+    height: 30vh;
+    width: 20vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 5px;
+}
+.box6 {
+    grid-column: 1/3; /* é equivalente a: grid-column-start: 1; grid-column-end: 3;
+                 Coloca o div ocupando 2 colunas (entre as margens verticais 1 e 2 */
+
+    grid-row: 1/2; /* Coloca o div na primeira linha (entre as margens horizontais 1 e 2 */
+}
+
+.container3 { 
+    height: 30vh;
+    width: 20vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 5px;
+}
+.box7 {
+    grid-column: 1/2;  
+    grid-row: 1/3;  
+}
+.box8 {
+    grid-row: 2/4;  
+}
+.box9 {
+    grid-column: 2/4;  
+}

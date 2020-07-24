@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{ 
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.box1 {
+    background-color: lightcoral;
+}
+
+.box2 {
+    background-color: lightblue;
+}
+
+.box3 {
+    background-color: lightgreen;
+    grid-column: 1/3; /* é equivalente a: grid-column-start: 1; grid-column-end: 3;
+                         Coloca o div ocupando 2 colunas (entre as margens verticais 1 e 2 */
+    grid-row: 1/2; /* Coloca o div na primeira linha (entre as margens horizontais 1 e 2 */
+}
