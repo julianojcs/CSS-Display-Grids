@@ -5,34 +5,55 @@
 }
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Add responsivity. The items goes filling all empty spaces and doesn't create empty items */
+    grid-template-rows: 1fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: gold;
 }
-.box1, .box4, .box7, .box10 {
+.red {
     background-color: lightcoral;
 }
-.box2, .box5, .box8, .box11 {
+.blue {
     background-color: lightblue;
 }
-.box3, .box6, .box9, .box12 {
+.green {
     background-color: lightgreen;
 }
-
-.container1 { 
-    height: 30vh;
-    width: 20vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin: 5px;
+.pink {
+    background-color: lightpink;
+}
+.orange {
+    background-color: orange;
+}
+.gray {
+    background-color: lightgray;
 }
 
-.container2 { 
+.conteudo { 
     height: 30vh;
-    width: 20vw;
+    width: 100%;
     display: grid;
+    gap: 2px;
+    padding: 2px;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+}
+
+.conteudo>img {
+    height: inherit;
+    width: inherit;
+}
+
+.conteudo1 { 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: 5px;
+}
+
+.conteudo2 { 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 .box6 {
     grid-column: 1/3; /* é equivalente a: grid-column-start: 1; grid-column-end: 3;
@@ -41,13 +62,9 @@ main {
     grid-row: 1/2; /* Coloca o div na primeira linha (entre as margens horizontais 1 e 2 */
 }
 
-.container3 { 
-    height: 30vh;
-    width: 20vw;
-    display: grid;
+.conteudo3 { 
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    margin: 5px;
 }
 .box7 {
     grid-column: 1/2;  
@@ -58,4 +75,79 @@ main {
 }
 .box9 {
     grid-column: 2/4;  
+}
+
+.conteudo4 { 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "Box10 Box11"
+        ". Box11"
+        "Box12 .";
+}
+.box10 {
+    grid-area: Box10;
+}
+.box11 {
+    grid-area: Box11;
+}
+.box12 {
+    grid-area: Box12;
+}
+
+.conteudo5 { 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "Box13 Box14"
+        "Box15 Box15";
+    justify-items: center; /* Affect all the items at the grid*/
+    align-items: center; /* Affect all the items at the grid*/
+}
+.box13 {
+    grid-area: Box13;
+    align-self: end;
+    justify-self: right; /* Affect only it self position at the grid*/
+}
+.box14 {
+    grid-area: Box14;
+    justify-self: left; /* Affect only it self position at the grid*/
+}
+.box15 {
+    grid-area: Box15;
+    align-self: end; /* Affect only it self position at the grid*/
+}
+
+.conteudo6 { 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "Box16 Box17"
+        "Box18 Box18";
+}
+.box16 {
+    grid-area: Box16;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box17 {
+    grid-area: Box17;
+}
+.box18 {
+    grid-area: Box18;
+}
+
+
+.gallery{ 
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px; */
+    /* grid-template-columns: repeat(3, 300px); -> The same as above*/
+    /* grid-template-columns: repeat(auto-fill, 300px);  Add responsivity. The items goes filling all empty spaces*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Add responsivity. The items goes filling all empty spaces and doesn't create empty items */
+    gap: 20px 10px;
+}
+
+.gallery>img {
+    width: 100%;
 }
